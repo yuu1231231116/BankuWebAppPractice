@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        text-align: center;
+        color: deeppink;
+      }
+    </style>
+
+  </head>
+  <body>
+    <h1>新規会員登録</h1>
+    <label for="name">名前</label>
+    <input
+      type="text"
+      placeholder="名前を入力してください"
+      id="name"
+      placeholder="名前"
+    />
+ 
+    
+
+    <label for="phone">電話番号</label>
+    <input type="tel" id="phone" placeholder="入力例090-1234-5678" />
+    </button>
+    <label for="balance">残高</label>
+    <input type="number" ="text" id="data" placeholder="残高を入力してください" />
+    <button id="balance" onclick="save()">残高確定</button>
+    <br>
+        <button onclick="window.location.href = 'StartPage.html'">
+      新規会員登録
+
+    <script>
+      function save() {
+        const value = document.getElementById("data").value;
+        
+        if(balance){
+            localStorage.setItem("value", value);
+            alert("残高を保存しました");  
+      }
+    }
+    </script>
+  </body>
+</html>

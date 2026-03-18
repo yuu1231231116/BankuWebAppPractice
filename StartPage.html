@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <p id="result"></p>
+  </head>
+  <body>
+    <h1>ページ</h1>
+    <!--ｈ1は登録した名前を表示するようにしたい-->
+    <h3>残高</h3>
+    <p id="value"></p>
+    <script>
+      const mydata = localStorage.getItem("value");
+      document.getElementById("value").textContent = "￥" + mydata + "です！";
+    </script>
+  </body>
+</html>
