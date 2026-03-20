@@ -15,34 +15,47 @@
   <body>
     <h1>新規会員登録</h1>
     <label for="name">名前</label>
-    <input
-      type="text"
-      placeholder="名前を入力してください"
-      id="name"
-      placeholder="名前"
-    />
- 
+    <input type="text" placeholder="名前を入力してください" id="name" placeholder="名前"/>
+    <button id="namedecision" onclick="savename()">名前決定</button>
     
 
     <label for="phone">電話番号</label>
     <input type="tel" id="phone" placeholder="入力例090-1234-5678" />
     </button>
-    <label for="balance">残高</label>
-    <input type="number" ="text" id="data" placeholder="残高を入力してください" />
-    <button id="balance" onclick="save()">残高確定</button>
+    <label for="balancevalue">残高</label>
+    <input type="number" = "text" id="data" placeholder="残高を入力してください" />
+    <button id="balance" onclick="save()">残高決定</button>
     <br>
         <button onclick="window.location.href = 'StartPage.html'">
       新規会員登録
 
-    <script>
+    <script>//残高のアラートとセット
       function save() {
         const value = document.getElementById("data").value;
         
         if(balance){
             localStorage.setItem("value", value);
             alert("残高を保存しました");  
-      }
+        }
     }
+    function savename() {
+        const valuename = document.getElementById("name").value;
+        
+        if(namedecision){
+            localStorage.setItem("key", valuename);
+            alert("名前を保存しました");  
+        }
+    }
+
+   /*function savename(//名前のアラートとセット
+      const namevalue = document.getElementById(name).value;
+    if(namevalue){
+            localStorage.setItem("name", value);
+            alert("名前を保存しました");  
+        }
+
+    )*/
+    //電話番号はログイン後ユーザー情報で見れるようにしたいからまたあとで実装
     </script>
   </body>
 </html>
