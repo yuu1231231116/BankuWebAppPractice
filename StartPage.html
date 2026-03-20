@@ -8,12 +8,33 @@
   </head>
   <body>
     <h1>ページ</h1>
-    <!--ｈ1は登録した名前を表示するようにしたい-->
+    <p id="valuename1"></p>
+    <script>
+      const mydataname = localStorage.getItem("key");
+      document.getElementById("valuename1").textContent =
+        mydataname + "さんの口座ページです";
+    </script>
+    <h1>口座番号</h1>
+    <p id="AccountNumber"></p>
+    <script>
+      //口座番号をランダムで１０桁生成して表示する
+      let NumberSave = [];
+      for (let i = 1; i <= 10; i++) {
+        const randomNunber = Math.floor(Math.random() * 10);
+        NumberSave.push(randomNunber);
+      }
+      const str = NumberSave.join(""); //この先でハイフンを入れたいから文字列に変換（""）で文字列に変換できる
+      const result = str.slice(0, 5) + "-" + str.slice(5);
+      document.getElementById("AccountNumber").textContent = result;
+    </script>
     <h3>残高</h3>
-    <p id="value"></p>
+    <p id="value1"></p>
     <script>
       const mydata = localStorage.getItem("value");
-      document.getElementById("value").textContent = "￥" + mydata + "です！";
+      document.getElementById("value1").textContent =
+        "￥" + mydata + "円です！";
     </script>
+    <button onclick="window.location.href = 'Withdrawal.html'">引き出し</button>
+    <button onclick="window.location.href = 'BankTransfer.html'">振込</button>
   </body>
 </html>
